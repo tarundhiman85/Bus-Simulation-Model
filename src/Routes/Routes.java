@@ -3,6 +3,7 @@ package Routes;
 import BusTypes.Bus;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Routes {
     //Design Principle: Favour Composition over Inheritance
@@ -10,15 +11,13 @@ public class Routes {
     private String source;
     private String destination;
     private int distance;
-
     public ArrayList<Bus> getBuses() {
         return buses;
     }
+    public List<String> destinations=new ArrayList<>();
     public void setBuses(ArrayList<Bus> buses) {
         this.buses = buses;
     }
-
-
     public String getSource() {
         return source;
     }

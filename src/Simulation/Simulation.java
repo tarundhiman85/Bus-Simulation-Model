@@ -96,6 +96,7 @@ public class Simulation {
                     default -> "";
                 };
                 //Using Factory Pattern to create the bus
+
                 Bus bus = BusFactory.getBus(busType);
                 id++;
                 bus.setBusID(id);
@@ -109,7 +110,13 @@ public class Simulation {
                 bus.setCapacity(seats);
                 bus.setDistance(distance);
                 //enter the destination of the bus
-                bus.setDestination(destination);
+                System.out.println("Enter the destination of the bus");
+                String destinationOfBus = sc.next();
+                bus.setDestination(destinationOfBus);
+                //enter the source of the bus
+                System.out.println("Enter the source of the bus");
+                String sourceOfBus = sc.next();
+                bus.setSource(sourceOfBus);
                 ArrayList<TravellerInter> travellers = new ArrayList<>();
                 //storing the list of travellers for each destination in a map
                 HashMap<String, ArrayList<TravellerInter>> map = new HashMap<>();
@@ -140,7 +147,8 @@ public class Simulation {
             }
             simulation.setRoutes(routes);
 
-            for (Bus bus : route.getBuses()) {
+            for (Bus bus : route.getBuses())
+            {
                 for (TravellerInter traveller : bus.getTravellers())
                 {
                     Destination destination1 = new Destination();

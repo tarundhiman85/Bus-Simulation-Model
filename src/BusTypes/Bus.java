@@ -17,6 +17,8 @@ public interface Bus {
     void setName(String name);
     void setCapacity(int seats);
     void setDistance(int distance);
+    void setSource(String source);
+    String getSource();
     void setTravellers(ArrayList<TravellerInter> travellers);
     void setDestination(String destination);
     void setDestinationTravellerMap(HashMap<String, ArrayList<TravellerInter>> destinationTravellerMap);

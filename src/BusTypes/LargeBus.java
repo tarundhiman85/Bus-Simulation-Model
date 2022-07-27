@@ -18,6 +18,7 @@ public class LargeBus implements Bus
     private int distance;
     private final String Deck="Double Deck";
     private Routes route;
+    private String source;
     private HashMap<String, ArrayList<TravellerInter>> destinationTravellerMap;
     private String destination;
     private int progress=0;
@@ -76,6 +77,16 @@ public class LargeBus implements Bus
 
     public void setDistance(int distance) {
         this.distance = distance;
+    }
+
+    @Override
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    @Override
+    public String getSource() {
+        return source;
     }
 
     public String getDeck() {

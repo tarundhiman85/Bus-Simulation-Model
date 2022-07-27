@@ -13,6 +13,7 @@ public class ElectricBus implements Bus
     private int capacity;
     private int averageSpeed;
     private int distance;
+    private String source;
     private final String Deck="Single Deck";
     private HashMap<String, ArrayList<TravellerInter>> destinationTravellerMap;
     private String destination;
@@ -73,6 +74,16 @@ public class ElectricBus implements Bus
 
     public void setDistance(int distance) {
         this.distance = distance;
+    }
+
+    @Override
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    @Override
+    public String getSource() {
+        return source;
     }
 
 

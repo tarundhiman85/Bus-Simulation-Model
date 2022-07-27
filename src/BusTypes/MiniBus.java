@@ -19,6 +19,7 @@ public class MiniBus implements Bus {
     private int averageSpeed;
     private Routes route;
     private int distance;
+    private String source;
     private final String Deck="Single Deck";
 
     private HashMap<String, ArrayList<TravellerInter>> destinationTravellerMap;
@@ -79,6 +80,16 @@ public class MiniBus implements Bus {
 
     public void setDistance(int distance) {
         this.distance = distance;
+    }
+
+    @Override
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    @Override
+    public String getSource() {
+        return source;
     }
 
     public HashMap<String, ArrayList<TravellerInter>> getDestinationTravellerMap() {
