@@ -18,7 +18,7 @@ public class beer extends foodDecorator {
 
     @Override
     public void setBus(Bus bus) {
-        this.setBus(bus);
+        this.traveller.setBus(bus);
     }
 
     @Override
@@ -75,5 +75,15 @@ public class beer extends foodDecorator {
     @Override
     public int getCost() {
         return 20+this.traveller.getCost();
+    }
+
+    @Override
+    public void setBagWeight(int bagWeight) {
+        this.traveller.setBagWeight(bagWeight);
+    }
+
+    @Override
+    public int getBagWeight() {
+        return this.traveller.getBagWeight();
     }
 }

@@ -20,5 +20,7 @@ public interface TravellerInter {
      void FoodType(String s);
      void setCost(int cost);
      int getCost();
+     void setBagWeight(int bagWeight);
+     public int getBagWeight();
 }
 

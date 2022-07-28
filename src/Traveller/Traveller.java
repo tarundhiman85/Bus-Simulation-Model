@@ -10,7 +10,7 @@ public class Traveller implements TravellerInter {
     //private variables
     private String name;
     private int age;
-    private int weight;
+    private int bagWeight;
     private int height;
     private int busID;
     private boolean wantFood=false;
@@ -20,6 +20,14 @@ public class Traveller implements TravellerInter {
     private Source source;
     private Bus bus;
     private int cost=0;
+
+    public int getBagWeight() {
+        return bagWeight;
+    }
+
+    public void setBagWeight(int bagWeight) {
+        this.bagWeight = bagWeight;
+    }
 
     public int getCost() {
         return cost;
@@ -88,7 +96,7 @@ public class Traveller implements TravellerInter {
         return "Traveller{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", weight=" + weight +
+                ", weight=" + bagWeight +
                 ", height=" + height +
                 ", busID=" + busID +
                 ", bus=" + bus +

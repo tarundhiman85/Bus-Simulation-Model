@@ -26,7 +26,7 @@ Design Patterns Used:
 2. Factory Pattern:we create object without exposing the creation logic to the client and refer to newly created object using a common interface.(Creation)
 3. Iterator Pattern:  that lets you traverse elements of a collection without exposing its underlying representation (behavioral)
 4. Builder Pattern: pattern that lets you construct complex objects step by step. (Creation Design Pattern)
-5. Decorator Pattern:n pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper
+5. Decorator Pattern: pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper
    objects that contain the behaviors. (Structural)
 * */
 public class Simulation {
@@ -81,8 +81,8 @@ public class Simulation {
             int numberOfBuses = sc.nextInt();
             simulation.setBusCount(numberOfBuses);
             int id = 0;
-            for (int i = 0; i < numberOfBuses; i++) {
-
+            for (int i = 0; i < numberOfBuses; i++)
+            {
                 System.out.println("Enter the bus type");
                 System.out.println("1. Electric Bus");
                 System.out.println("2. Large Bus");
@@ -96,7 +96,6 @@ public class Simulation {
                     default -> "";
                 };
                 //Using Factory Pattern to create the bus
-
                 Bus bus = BusFactory.getBus(busType);
                 id++;
                 bus.setBusID(id);
@@ -104,7 +103,6 @@ public class Simulation {
                 sc.nextLine();
                 String name = sc.nextLine();
                 bus.setName(name);
-
                 System.out.println("Enter the number of seats");
                 int seats = sc.nextInt();
                 bus.setCapacity(seats);
@@ -121,7 +119,8 @@ public class Simulation {
                 //storing the list of travellers for each destination in a map
                 HashMap<String, ArrayList<TravellerInter>> map = new HashMap<>();
                 map.put(destination, new ArrayList<>());
-                for (int j = 0; j < seats; j++) {
+                for (int j = 0; j < seats; j++)
+                {
                     sc.nextLine();
                     TravellerInter traveller = new Traveller();
                     System.out.println("Enter the " + (j + 1) + "th traveller name");
@@ -129,6 +128,14 @@ public class Simulation {
                     traveller.setName(travellerName);
                     System.out.println("Enter the age");
                     int age = sc.nextInt();
+                    traveller.setAge(age);
+                    System.out.println("Enter the Weight of baggage");
+                    int weight = sc.nextInt();
+                    traveller.setBagWeight(weight);
+                    if(weight>25){
+                        System.out.println("Baggage weight is too heavy");
+                        continue;
+                    }
                     System.out.println("Enter the Source of the traveller");
                     String source1 = sc.nextLine();
                     Source source2 = new Source();
@@ -174,16 +181,21 @@ public class Simulation {
             System.out.println(route.getBuses());
 
             //Iterator Pattern: Iterator is used to iterate through the list of buses (Behavioral Design Pattern)
-            for (Bus bus : route.getBuses()) {
-                for (TravellerInter traveller : bus.getTravellers()) {
-                    if (traveller.getDestination().getDestination().equals(destination1)) {
+            for (Bus bus : route.getBuses())
+            {
+                for (TravellerInter traveller : bus.getTravellers())
+                {
+                    if (traveller.getDestination().getDestination().equals(destination1))
+                    {
                         System.out.println(traveller.getName());
                     }
                 }
             }
             //for all the busses in the route
-            for (Bus bus : route.getBuses()) {
-                for (TravellerInter traveller : bus.getTravellers()) {
+            for (Bus bus : route.getBuses())
+            {
+                for (TravellerInter traveller : bus.getTravellers())
+                {
                     if (traveller.isWantFood()) {
                         //we will ask for drinks
                         System.out.println("Does traveller "+traveller.getName()+" wants drinks?(yes/no) and if yes, what kind of drinks");
